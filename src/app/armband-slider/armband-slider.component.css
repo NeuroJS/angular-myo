@@ -1,0 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+main {
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    padding: 10vw;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(70vh / 3);
+}
+
+h2 {
+    text-transform: capitalize;
+    font-weight: 300;
+}
+
+article {
+    display: flex;
+    width: 100%;
+    padding: 0 40px;
+}
+
+label {
+    text-transform: uppercase;
+    margin-right: 10px;
+    width: 20px;
+}
+
+meter {
+    display: flex;
+    width: 100%;
+    background: #eeeeee;
+    transition: all .2s;
+}
+
+main section:nth-child(1) meter::-webkit-meter-optimum-value {
+    background: gold;
+}
+
+main section:nth-child(2) meter::-webkit-meter-optimum-value {
+    background: skyblue;
+}
+
+main section:nth-child(3) meter::-webkit-meter-optimum-value {
+    background: orchid;
+}
