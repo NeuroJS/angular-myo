@@ -1,10 +1,9 @@
 <main>
-  <section *ngFor="let metric of keys(imu | async)">
-    <h2>{{ metric }}</h2>
-    <article *ngFor="let prop of keys((imu | async)[metric])">
+  <section *ngFor="let metric of (imu$ | async)">
+    <h2>{{ metric.key }}</h2>
+    <article *ngFor="let prop of keys(metric.value)">
       <label>{{ prop }}</label>
-      <meter [value]="(imu | async)[metric][prop]"></meter>
+      <meter [value]="metric.value[prop]"></meter>
     </article>
   </section>
-  <pre>{{ imu | async | json }}</pre>
 </main>

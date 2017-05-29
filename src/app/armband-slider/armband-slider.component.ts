@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ArmbandService } from '../services/armband';
+import _ from 'lodash';
 
 @Component({
   selector: 'armband-slider',
@@ -8,7 +9,7 @@ import { ArmbandService } from '../services/armband';
 })
 export class ArmbandSliderComponent {
   keys = Object.keys;
-  imu = this.armbandService.fromEvent('imu');
   constructor(private armbandService: ArmbandService) {}
+  imu$ = this.armbandService.fromEvent('imu')
+    .map(data => _.map(data, (value, key) => ({ key, value }) ));
 }
-
